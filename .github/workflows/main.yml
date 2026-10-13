@@ -1,0 +1,48 @@
+
+name: Build Windows Lightroom Plugin
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  windows-exe:
+    runs-on: windows-2022
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          architecture: 'x64'
+
+      - name: Build Windows EXE
+        shell: pwsh
+        run: |
+          ./Build_EXE.ps1
+
+      - name: Test EXE
+        shell: pwsh
+        run: |
+          & ./runtime/ANWeddingFinish.exe --diagnostics
+          if ($LASTEXITCODE -ne 0) {
+            throw "Diagnostics failed"
+          }
+
+      - name: Package Lightroom Plugin
+        shell: pwsh
+        run: |
+          python scripts/package_release.py
+
+      - name: Upload Compiled Plugin
+        uses: actions/upload-artifact@v4
+        with:
+          name: AN_Wedding_Finish_V7_Windows_x64_Compiled_Plugin
+          path: AN_Wedding_Finish_V7_Windows_x64_Compiled_Plugin.zip
+          if-no-files-found: error
