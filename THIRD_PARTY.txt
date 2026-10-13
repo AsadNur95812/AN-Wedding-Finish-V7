@@ -1,0 +1,1 @@
+Bundled Python 3.12.10, NumPy 2.2.6, Pillow 11.2.1, tifffile 2025.5.10, OpenCV headless 4.11.0.86 and LittleCMS2. Component licenses are retained in runtime, runtime/Lib/site-packages/*dist-info and engine/native. No pretrained generative model included.

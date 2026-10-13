@@ -1,0 +1,42 @@
+AN WEDDING FINISH V7 RC1 - WINDOWS EXE BUILD PACKAGE
+===================================================
+
+WHAT YOU GET
+- Build_EXE.bat: Windows one-click EXE build launcher.
+- Build_EXE.ps1: builds a standalone, console-based Windows x64 EXE using PyInstaller.
+- Lightroom plugin updated to call runtime\ANWeddingFinish.exe (not Python).
+- Engine, examples and tests from the uploaded source ZIP.
+
+IMPORTANT: The Windows EXE IS NOT PREBUILT in this archive.
+The uploaded source did not include the Windows Python runtime or Windows
+Python packages, and the source was supplied to a Linux build environment.
+Windows PyInstaller builds must run on Windows. No Windows EXE is claimed to
+have been compiled or tested here.
+
+BUILD ON YOUR WINDOWS COMPUTER
+1. Extract this entire ZIP to a permanent folder, e.g. C:\AN_Wedding_Finish_V7.
+2. Install Python 3.12, 64-bit, from https://www.python.org/downloads/windows/
+   (the Python Launcher `py` is recommended). Other versions are not used.
+3. Connect to the internet for the first build. Double-click Build_EXE.bat.
+   It creates a private .build-venv, downloads build dependencies and bundles
+   them into runtime\ANWeddingFinish.exe. This may take several minutes.
+4. Confirm the last message is SUCCESS and run Diagnostics.cmd.
+5. Open Lightroom Classic > File > Plug-in Manager > Add.
+   Choose lightroom\AN_Wedding_Finish.lrplugin from this folder.
+6. Select photos and use File > Plug-in Extras > AN Wedding Finish V7.
+
+This is a LIGHTROOM PLUGIN ENGINE, not a standalone photo-editing GUI.
+The EXE processes JSON jobs created by the Lightroom plugin and has a
+--diagnostics mode. It does not need a separately installed Python after
+building, although the Windows Visual C++ runtime may be required.
+
+SUPPORTED: Windows 64-bit x86_64, Python 3.12 x64 for BUILD only,
+Lightroom Classic for the UI. It is a release candidate.
+
+The code was inspected and its Python engine tests passed in Linux. Windows
+build and Lightroom integration were not run or validated in this environment.
+Use backups for important photos. Original photos are not overwritten by design.
+
+Note: This CPU engine adjusts color, exposure and glow. It does not include
+generative retouching or guarantee visual equivalence to reference images.
+See START_HERE.txt for other existing product limitations.

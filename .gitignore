@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.build-venv/
+build/
+dist/
+runtime/
+*.spec
+AN_Wedding_Finish_V7_Windows_x64_Compiled_Plugin.zip

@@ -1,0 +1,51 @@
+AN WEDDING FINISH V7 RC1 — Windows x64 / Lightroom Classic
+
+INSTALL (source-to-EXE build required; see BUILD_GUIDE.txt)
+1. Extract the ENTIRE ZIP to a permanent folder, e.g. C:\AN_Wedding_Finish_V7.
+2. On Windows x64 with Python 3.12 x64 and internet, run Build_EXE.bat.
+   Then run Diagnostics.cmd. It must say CPU runtime OK.
+3. Lightroom Classic > File > Plug-in Manager > Add.
+   Choose lightroom\AN_Wedding_Finish.lrplugin inside this folder.
+4. Select a few photos. File > Plug-in Extras > AN Wedding Finish V7.
+5. Choose Golden Editorial or Soft Golden Window; adjust controls.
+6. Preview first photo. Apply, or Back to settings. Cancel settings to exit.
+7. Full-resolution 16-bit sRGB TIFF appears beside original and is imported.
+   Stacks are visible in folder view. Originals are never edited.
+
+REQUIREMENTS
+64-bit Windows, Intel/AMD CPU, Lightroom Classic, enough free disk space.
+Designed for sequential processing on 16 GB RAM. Actual PC speed is unmeasured.
+A 33 MP uncompressed RGB16 TIFF is about 200 MB; allow input + output space.
+Keep the extracted folder in place. Moving it requires re-adding the plugin.
+Paths containing percent, exclamation, double quote, or newline are unsupported.
+
+LOOKS AND CONTROLS
+Golden Editorial: warmer amber venue tones, richer reds, restrained glow.
+Soft Golden Window: gentler warmth and contrast for window portraits.
+Clean Neutral: neutral starting point; exposure/WB/relight controls still apply.
+Amount 0 is unchanged pixels. 0.75 is the default blend.
+Exposure is EV before blend. Warmth/tint range -1 to 1.
+Face relight uses detected face regions; no guaranteed face or subject segmentation.
+Skin protection uses colour heuristics and may protect warm fabric too.
+Preview uses 1600 px; fine details and masks can differ at full resolution.
+
+IMPORTANT STATUS
+Release candidate. Python engine tested in Linux; Windows bundled EXE and
+Lightroom UI/catalog integration have NOT been executed in this environment.
+The approved generative images are STYLE TARGETS. This engine performs CPU
+colour/exposure/glow adjustments; it is NOT that generative model and cannot
+promise identical relighting, makeup retouching or background reconstruction.
+No beautification, body/face reshaping, denoise model or skin smoothing is included.
+EXIF/IPTC/GPS/capture metadata and Lightroom keywords/ratings are NOT copied to
+output. Keep original/catalog. sRGB ICC is embedded. No internet upload in plugin.
+Cancellation is checked between processing tiles; Lightroom export/read/write
+may finish before cancellation is handled. Completed outputs remain.
+
+TROUBLESHOOTING
+Run Diagnostics.cmd. A missing Windows DLL may require Microsoft's official
+Visual C++ 2015-2022 x64 Redistributable. Do not download DLLs from random sites.
+Errors show a temp diagnostics folder with JSON status and traceback log.
+If catalog import fails, the completed TIFF stays beside its source.
+Do not start concurrent batches of this plugin on a 16 GB machine.
+Remove via Lightroom Plug-in Manager; then delete extracted folder if desired.
+V6 is separate and is not modified.

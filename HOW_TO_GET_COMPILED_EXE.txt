@@ -1,0 +1,19 @@
+THIS ARCHIVE CONTAINS SOURCE + A WINDOWS BUILD WORKFLOW, NOT A COMPILED EXE.
+
+Option A — Windows computer:
+  1. Install Python 3.12 64-bit (and ensure Internet access).
+  2. Extract this ZIP and run Build_EXE.bat.
+  3. When it finishes, run Diagnostics.cmd.
+  4. Run: python scripts\package_release.py
+  5. The new AN_Wedding_Finish_V7_Windows_x64_Compiled_Plugin.zip
+     contains the Windows EXE and Lightroom .lrplugin folder.
+
+Option B — GitHub Actions (Windows cloud runner, no local Python needed):
+  1. Create a private GitHub repository and upload the CONTENTS of this folder
+     to the repository root (including .github/workflows).
+  2. Go to Actions > Build Windows Lightroom Plugin > Run workflow.
+  3. After a successful run, download the compiled ZIP from Artifacts.
+  4. Extract it and follow WINDOWS_PLUGIN_INSTALL.txt.
+
+Important: Compilation and Windows Lightroom integration cannot be verified
+from this Linux environment. The GitHub Actions run is the actual Windows build.

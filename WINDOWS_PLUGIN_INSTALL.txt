@@ -1,0 +1,23 @@
+AN WEDDING FINISH V7 RC1 — WINDOWS x64 LIGHTROOM CLASSIC PLUGIN
+
+This guide is included in the COMPILED release package produced by the Windows build.
+The ZIP containing the source and GitHub workflow is NOT a compiled EXE release.
+
+1. Extract the complete AN_Wedding_Finish_V7 folder to a permanent location,
+   for example C:\AN_Wedding_Finish_V7. Do not move it after installation.
+2. Confirm that the following files exist:
+     AN_Wedding_Finish_V7\runtime\ANWeddingFinish.exe
+     AN_Wedding_Finish_V7\lightroom\AN_Wedding_Finish.lrplugin\Info.lua
+3. Open Windows Terminal in AN_Wedding_Finish_V7 and run:
+     .\runtime\ANWeddingFinish.exe --diagnostics
+   It should print: AN Wedding Finish V7 CPU runtime OK ...
+4. Open Lightroom Classic > File > Plug-in Manager > Add.
+5. Select AN_Wedding_Finish_V7\lightroom\AN_Wedding_Finish.lrplugin.
+6. Select photos in Library. Go to File > Plug-in Extras > AN Wedding Finish V7.
+
+The plugin processes a Lightroom-rendered TIFF and imports a new TIFF beside
+its original. Originals are not modified. Output metadata may not be copied.
+Windows x64 and Lightroom Classic are required. This is a release candidate;
+Windows Lightroom end-to-end integration has not been independently validated.
+If Windows SmartScreen or antivirus blocks the unsigned EXE, inspect and
+verify the build source; do not disable security protections blindly.
